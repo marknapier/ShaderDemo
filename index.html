@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Sketch Shader Demo</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+  <!--script src="js/lib/jquery/jquery-1.9.1.js"></script-->
+
+  <link href="css/shader_demo.css" rel="stylesheet" type="text/css">
+  <script src="js/shader_demo.js"></script>  
+</head>
+
+<body>
+  <div class="container">
+
+    <div id="header">
+      <div class="company_name">
+        <span class="aleph_AF">S</span><span class="aleph">HADER</span> <span class="aleph_AF">D</span><span class="aleph">EMO</span>
+      </div>
+      <div class="nav_menu">
+      </div>
+    </div>
+
+    <p>Click and drag to move</p>
+    <div id="canvas_wrapper">
+      <div id="canvas_loading_prompt"><img src="img/loading_white_dot_circle.gif"></div>
+      <div id="three_canvas"></div>
+    </div>
+
+    <div class="nav">
+      <ul>
+        <li class="draw_3D"><a href="3D">Lit Model</a></li>
+        <li class="draw_edges"><a href="edges">Edges</a></li>
+        <li class="draw_gray"><a href="grayscale">Grayscale</a></li>
+        <li class="draw_bluelines"><a href="blue_hatch">Hatched</a></li>
+        <li class="draw_coarse"><a href="coarse_sketch">Coarse Sketch</a></li>
+        <li class="draw_sepia"><a href="fine_sketch" class="active">Fine Sketch</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/shaders/CopyShader.js"></script>
+  <script src="js/shaders/EdgeShaderCannyFilled.js"></script>
+  <script src="js/shaders/EdgeShaderCanny.js"></script>
+  <script src="js/shaders/OverlayShaderMultitextureBlend.js"></script>
+  <script src="js/postprocessing/EffectComposer.js"></script>
+  <script src="js/postprocessing/RenderPass.js"></script>
+  <script src="js/postprocessing/MaskPass.js"></script>
+  <script src="js/postprocessing/ShaderPass.js"></script>
+
+  <script src="js/Detector.js"></script>
+  <script src="js/loaders/OBJLoader.js"></script>
+  <script src="js/loaders/MTLLoader.js"></script>
+  <script src="js/loaders/OBJMTLLoader.js"></script>
+  <script src="js/controls/TrackballControls.js"></script>
+
+  <script src="js/ShaderDemo.js"></script>
+
+  <script>
+      ShaderDemo.show();
+  </script>
+
+</body>
+</html>
