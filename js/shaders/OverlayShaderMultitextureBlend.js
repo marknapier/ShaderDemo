@@ -61,15 +61,12 @@ THREE.OverlayShaderMultitextureBlend = {
 			"vec4 blank = vec4(0.0);",
 			"float blendFactor = 0.0;",
 
-			// "if (colorIn.g != 1.0) {",			// MJN skip background color (green)
-			"if (colorIn.a != 0.0) {",			// MJN skip transparent background 
+			"if (colorIn.a != 0.0) {",			// MJN skip transparent background
 				"if (colorIn.r < .75) {",
 				"	vec4 c = getColor(overlay1);",	// lite
 				"	float whiteness = how_close_to_white(c);",  // will be 1 if pure white
 				"	blendFactor = 1. - (colorIn.r / .75);",		// where is the gray in this range: 0 if gray is at the top of the band, 1 if at the bottom
 				"	colorOvl = vec4(c.r, c.g, c.b, (1.0-whiteness) * blendFactor);",  // alpha is whiteness
-				// "	colorOvl = mix(colorOvl, c, (1.0-whiteness) * blendFactor);",  // mix overlay image into colorOvl: whiter colors become transparent
-				// "	colorOvl = colorConvertSepia(colorOvl);",
 				"}",
 				"if (colorIn.r < .50) {",
 				"	vec4 c = getColor(overlay2);",	// medium
@@ -80,7 +77,6 @@ THREE.OverlayShaderMultitextureBlend = {
 				"	} else {",
 				"		colorOvl = vec4(c.r, c.g, c.b, (1.0-whiteness) * blendFactor);",  // alpha is whiteness
 				"	}",
-				// "	colorOvl = colorConvertSepia(colorOvl);",
 				"}",
 				"if (colorIn.r < .25) {",
 				"	vec4 c = getColor(overlay3);",	// dark
@@ -91,8 +87,8 @@ THREE.OverlayShaderMultitextureBlend = {
 				"	} else {",
 				"		colorOvl = vec4(c.r, c.g, c.b, (1.0-whiteness) * blendFactor);",  // alpha is whiteness
 				"	}",
-				// "	colorOvl = colorConvertSepia(colorOvl);",
 				"}",
+				// "colorOvl = colorConvertSepia(colorOvl);",
 			"}",
 			"gl_FragColor = colorOvl;",
 		"}"
